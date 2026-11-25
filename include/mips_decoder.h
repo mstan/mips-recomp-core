@@ -3,7 +3,9 @@
 #include <cstdint>
 #include <vector>
 #include <string>
+#if __cplusplus >= 202002L || (defined(_MSVC_LANG) && _MSVC_LANG >= 202002L)
 #include <span>
+#endif
 
 namespace mips_recomp {
 
@@ -68,8 +70,10 @@ public:
     static DecodedInstruction decode(uint32_t instr, uint32_t address = 0);
 
     // Decode host-order words. Image/container parsing stays consumer-owned.
+#if __cplusplus >= 202002L || (defined(_MSVC_LANG) && _MSVC_LANG >= 202002L)
     static std::vector<DecodedInstruction> decode_words(
         std::span<const uint32_t> words, uint32_t base_address = 0);
+#endif
 
     // Compute branch target: address + 4 + (imm16 << 2)
     static uint32_t compute_branch_target(uint32_t address, int16_t imm16);
