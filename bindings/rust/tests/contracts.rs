@@ -2,6 +2,9 @@ use mips_recomp_core as m;
 
 #[test]
 fn instruction_fields_and_signed_immediate() {
+    assert_eq!(m::primary::JAL, 3);
+    assert_eq!(m::special::JR, 8);
+    assert_eq!(m::regimm::BGEZAL, 0x11);
     let word = 0x8c83_fffc;
     assert_eq!((m::opcode(word), m::rs(word), m::rt(word)), (0x23, 4, 3));
     assert_eq!(m::immediate(word), 0xfffc);
