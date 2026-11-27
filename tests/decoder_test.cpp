@@ -1,10 +1,13 @@
 #include "mips_decoder.h"
+#include "mips_targets.h"
 #include <cstdio>
 #include <cstdlib>
 #include <string_view>
 #define CHECK(x) do {if(!(x)){std::fprintf(stderr,"line %d: %s\n",__LINE__,#x);std::exit(1);}}while(0)
 using namespace mips_recomp;
 int main(){
+ CHECK(integer::branch_target(uint64_t{0xfffffffffffffffc},int16_t{-32768})==uint64_t{0xfffffffffffe0000});
+ CHECK(integer::jump_target(uint64_t{0xffffffff0ffffffc},1)==uint64_t{0xffffffff10000004});
  CHECK(MipsDecoder::compute_branch_target(0, -1)==0);
  CHECK(MipsDecoder::compute_branch_target(0xfffffffc,-32768)==0xfffe0000u);
  CHECK(MipsDecoder::compute_jump_target(0x0ffffffc,1)==0x10000004);
