@@ -20,6 +20,10 @@ caller extension patterns. The direct-call predicate excludes JALR: its link
 policy depends on the destination register. Python metadata uses the same
 control kinds while retaining profile masks and execution bindings in its caller.
 
+Rust also exposes `primary`, `special` and `regimm` selector constants from the
+same schema. A typed adapter can use these in its existing ordered match when
+block layout matters, without duplicating numeric encoding definitions.
+
 The target helpers preserve unsigned address-width wrapping and use PC+4 for
 the jump region. CPU-specific reserved encodings, canonical-field validation,
 coprocessors, execution, metadata bindings and instruction extensions remain
