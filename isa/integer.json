@@ -1,0 +1,396 @@
+{
+  "fields": {
+    "opcode": [
+      26,
+      6
+    ],
+    "rs": [
+      21,
+      5
+    ],
+    "rt": [
+      16,
+      5
+    ],
+    "rd": [
+      11,
+      5
+    ],
+    "sa": [
+      6,
+      5
+    ],
+    "funct": [
+      0,
+      6
+    ],
+    "immediate": [
+      0,
+      16
+    ],
+    "index": [
+      0,
+      26
+    ]
+  },
+  "selectors": {
+    "primary": [
+      [
+        2,
+        "J"
+      ],
+      [
+        3,
+        "Jal"
+      ],
+      [
+        4,
+        "Beq"
+      ],
+      [
+        5,
+        "Bne"
+      ],
+      [
+        6,
+        "Blez"
+      ],
+      [
+        7,
+        "Bgtz"
+      ],
+      [
+        8,
+        "Addi"
+      ],
+      [
+        9,
+        "Addiu"
+      ],
+      [
+        10,
+        "Slti"
+      ],
+      [
+        11,
+        "Sltiu"
+      ],
+      [
+        12,
+        "Andi"
+      ],
+      [
+        13,
+        "Ori"
+      ],
+      [
+        14,
+        "Xori"
+      ],
+      [
+        15,
+        "Lui"
+      ],
+      [
+        32,
+        "Lb"
+      ],
+      [
+        33,
+        "Lh"
+      ],
+      [
+        34,
+        "Lwl"
+      ],
+      [
+        35,
+        "Lw"
+      ],
+      [
+        36,
+        "Lbu"
+      ],
+      [
+        37,
+        "Lhu"
+      ],
+      [
+        38,
+        "Lwr"
+      ],
+      [
+        40,
+        "Sb"
+      ],
+      [
+        41,
+        "Sh"
+      ],
+      [
+        42,
+        "Swl"
+      ],
+      [
+        43,
+        "Sw"
+      ],
+      [
+        46,
+        "Swr"
+      ]
+    ],
+    "special": [
+      [
+        0,
+        "Sll"
+      ],
+      [
+        2,
+        "Srl"
+      ],
+      [
+        3,
+        "Sra"
+      ],
+      [
+        4,
+        "Sllv"
+      ],
+      [
+        6,
+        "Srlv"
+      ],
+      [
+        7,
+        "Srav"
+      ],
+      [
+        8,
+        "Jr"
+      ],
+      [
+        9,
+        "Jalr"
+      ],
+      [
+        12,
+        "Syscall"
+      ],
+      [
+        13,
+        "Break"
+      ],
+      [
+        16,
+        "Mfhi"
+      ],
+      [
+        17,
+        "Mthi"
+      ],
+      [
+        18,
+        "Mflo"
+      ],
+      [
+        19,
+        "Mtlo"
+      ],
+      [
+        24,
+        "Mult"
+      ],
+      [
+        25,
+        "Multu"
+      ],
+      [
+        26,
+        "Div"
+      ],
+      [
+        27,
+        "Divu"
+      ],
+      [
+        32,
+        "Add"
+      ],
+      [
+        33,
+        "Addu"
+      ],
+      [
+        34,
+        "Sub"
+      ],
+      [
+        35,
+        "Subu"
+      ],
+      [
+        36,
+        "And"
+      ],
+      [
+        37,
+        "Or"
+      ],
+      [
+        38,
+        "Xor"
+      ],
+      [
+        39,
+        "Nor"
+      ],
+      [
+        42,
+        "Slt"
+      ],
+      [
+        43,
+        "Sltu"
+      ]
+    ],
+    "regimm": [
+      [
+        0,
+        "Bltz"
+      ],
+      [
+        1,
+        "Bgez"
+      ],
+      [
+        16,
+        "Bltzal"
+      ],
+      [
+        17,
+        "Bgezal"
+      ]
+    ]
+  },
+  "control": {
+    "Lhu": "linear",
+    "Lh": "linear",
+    "Sra": "linear",
+    "Mfhi": "linear",
+    "Lui": "linear",
+    "Nor": "linear",
+    "Sll": "linear",
+    "Lbu": "linear",
+    "Jalr": "call_register",
+    "Multu": "linear",
+    "Or": "linear",
+    "Blez": "branch",
+    "Sltiu": "linear",
+    "Swr": "linear",
+    "Sh": "linear",
+    "Bgez": "branch",
+    "Divu": "linear",
+    "Andi": "linear",
+    "Lwl": "linear",
+    "Lwr": "linear",
+    "Sltu": "linear",
+    "Bne": "branch",
+    "Srlv": "linear",
+    "Swl": "linear",
+    "Mthi": "linear",
+    "Add": "linear",
+    "Mtlo": "linear",
+    "Jr": "jump_register",
+    "J": "jump",
+    "Sw": "linear",
+    "Div": "linear",
+    "Xor": "linear",
+    "Ori": "linear",
+    "Mult": "linear",
+    "Addi": "linear",
+    "Jal": "call",
+    "Break": "exception",
+    "Mflo": "linear",
+    "Bgtz": "branch",
+    "Beq": "branch",
+    "Sb": "linear",
+    "Addu": "linear",
+    "Subu": "linear",
+    "Bltzal": "call",
+    "Bgezal": "call",
+    "And": "linear",
+    "Lw": "linear",
+    "Slt": "linear",
+    "Sllv": "linear",
+    "Lb": "linear",
+    "Sub": "linear",
+    "Srav": "linear",
+    "Xori": "linear",
+    "Srl": "linear",
+    "Bltz": "branch",
+    "Addiu": "linear",
+    "Syscall": "exception",
+    "Slti": "linear"
+  },
+  "classification": {
+    "J": "jump",
+    "Jal": "jump",
+    "Beq": "branch",
+    "Bne": "branch",
+    "Blez": "branch",
+    "Bgtz": "branch",
+    "Addi": "alu",
+    "Addiu": "alu",
+    "Slti": "alu",
+    "Sltiu": "alu",
+    "Andi": "alu",
+    "Ori": "alu",
+    "Xori": "alu",
+    "Lui": "alu",
+    "Lb": "load",
+    "Lh": "load",
+    "Lwl": "load",
+    "Lw": "load",
+    "Lbu": "load",
+    "Lhu": "load",
+    "Lwr": "load",
+    "Sb": "store",
+    "Sh": "store",
+    "Swl": "store",
+    "Sw": "store",
+    "Swr": "store",
+    "Sll": "alu",
+    "Srl": "alu",
+    "Sra": "alu",
+    "Sllv": "alu",
+    "Srlv": "alu",
+    "Srav": "alu",
+    "Jr": "jump",
+    "Jalr": "jump",
+    "Syscall": "syscall",
+    "Break": "break",
+    "Mfhi": "alu",
+    "Mthi": "alu",
+    "Mflo": "alu",
+    "Mtlo": "alu",
+    "Mult": "alu",
+    "Multu": "alu",
+    "Div": "alu",
+    "Divu": "alu",
+    "Add": "alu",
+    "Addu": "alu",
+    "Sub": "alu",
+    "Subu": "alu",
+    "And": "alu",
+    "Or": "alu",
+    "Xor": "alu",
+    "Nor": "alu",
+    "Slt": "alu",
+    "Sltu": "alu",
+    "Bltz": "branch",
+    "Bgez": "branch",
+    "Bltzal": "branch",
+    "Bgezal": "branch"
+  }
+}
