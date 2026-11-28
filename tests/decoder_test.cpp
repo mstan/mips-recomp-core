@@ -1,4 +1,4 @@
-#include "mips_decoder.h"
+#include "mips_recomp/decoder.h"
 #include "mips_targets.h"
 #include <cstdio>
 #include <cstdlib>
